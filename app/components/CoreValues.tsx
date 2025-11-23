@@ -66,17 +66,17 @@ export default function CoreValues() {
         </div>
 
         {/* Core Values Sections */}
-        <div className="space-y-12 md:space-y-16 lg:space-y-20">
+        <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
           {values.map((value, index) => (
             <div
               key={index}
               className={`flex flex-col ${
                 value.imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"
-              } items-start gap-6 md:gap-8 lg:gap-12`}
+              } items-start gap-4 sm:gap-6 md:gap-8 lg:gap-12`}
             >
               {/* Image */}
               <div className="w-full md:w-1/2 flex-shrink-0">
-                <div className="relative h-80 md:h-96 lg:h-[800px] rounded-xl overflow-hidden">
+                <div className="relative h-64 sm:h-80 md:h-96 lg:h-[800px] rounded-xl overflow-hidden">
                   <Image
                     src={value.image}
                     alt={value.title}
@@ -87,7 +87,7 @@ export default function CoreValues() {
               </div>
 
               {/* Content */}
-              <div className="w-full md:w-1/2 h-80 md:h-96 lg:h-[800px] flex flex-col">
+              <div className="w-full md:w-1/2 flex flex-col justify-center">
                 {/* Number Square */}
                 <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
                   <span className="text-white font-bold text-xl">
@@ -96,32 +96,32 @@ export default function CoreValues() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-green-600 font-bold text-3xl md:text-4xl mb-2">
+                <h3 className="text-green-600 font-bold text-2xl sm:text-3xl md:text-4xl mb-2">
                   {value.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="yellow-theme-color font-semibold text-lg md:text-xl mb-4">
+                <p className="yellow-theme-color font-semibold text-base sm:text-lg md:text-xl mb-4">
                   {value.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
                   {value.description}
                 </p>
 
                 {/* Features List */}
-                <ul className="space-y-3">
+                <ul className="space-y-2 sm:space-y-3">
                   {value.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center gap-3 text-slate-700"
+                      className="flex items-center gap-2 sm:gap-3 text-slate-700"
                     >
                       <FontAwesomeIcon
                         icon={faCheck}
-                        className="text-green-600 flex-shrink-0 h-8 "
+                        className="text-green-600 flex-shrink-0 h-5 sm:h-6 md:h-8"
                       />
-                      <span className="text-base md:text-lg">{feature}</span>
+                      <span className="text-sm sm:text-base md:text-lg">{feature}</span>
                     </li>
                   ))}
                 </ul>
