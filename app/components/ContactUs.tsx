@@ -36,7 +36,7 @@ export default function ContactUs() {
         {/* Contact Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24 max-w-6xl mx-auto">
           {/* Info Card - Left Column */}
-          <div className="lg:col-span-5 bg-[#6B8E4E] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#556B2F] via-[#6B8E3D] to-[#556B2F] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
             {/* Decorative Circle */}
             <div className="absolute bottom-12 right-12 w-24 h-24 rounded-full border-2 border-white/20"></div>
             <div className="absolute bottom-8 right-8 w-32 h-32 rounded-full border-2 border-white/10"></div>
@@ -165,7 +165,7 @@ export default function ContactUs() {
 
               <button
                 type="submit"
-                className="w-full bg-[#6B8E4E] text-white font-semibold py-4 rounded-xl hover:bg-[#5A7A40] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-[#6B8E4E]/20"
+                className="w-full bg-gradient-to-b from-[#556B2F] to-[#6B8E3D] text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#556B2F]/20"
               >
                 Send Message
                 <FontAwesomeIcon icon={faPaperPlane} className="w-4 h-4" />
