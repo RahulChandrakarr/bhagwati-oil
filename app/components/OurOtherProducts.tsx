@@ -41,7 +41,7 @@ export default function OurOtherProducts() {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-green-600 font-serif text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
+          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4" style={{ color: "#556b2f" }}>
             Our Other Products
           </h2>
           <p className="text-slate-600 text-sm md:text-base lg:text-lg max-w-3xl mx-auto">
@@ -97,7 +97,7 @@ export default function OurOtherProducts() {
           {/* Right Side - Content */}
           <div className="flex flex-col">
             {/* Title */}
-            <h2 className="text-green-600 font-serif text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8" style={{ color: "#556b2f" }}>
               Our Purity Process
             </h2>
 
@@ -113,15 +113,15 @@ export default function OurOtherProducts() {
 
             {/* Certifications */}
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-              <div className="bg-green-600 text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md">
+              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">FSSAI Certified</span>
               </div>
-              <div className="bg-green-600 text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md">
+              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">ISO Compliant</span>
               </div>
-              <div className="bg-green-600 text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md">
+              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">Lab Tested</span>
               </div>

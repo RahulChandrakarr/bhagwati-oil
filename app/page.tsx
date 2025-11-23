@@ -5,6 +5,8 @@ import WhyChooseBhagwati from "./components/WhyChooseBhagwati";
 import StatsBanner from "./components/StatsBanner";
 import FeaturedProducts from "./components/FeaturedProducts";
 import OurOtherProducts from "./components/OurOtherProducts";
+import Testimonials from "./components/Testimonials";
+import CTA from "./components/CTA";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <StatsBanner />
       <FeaturedProducts />
       <OurOtherProducts />
+      <Testimonials />
+      <CTA />
     </main>
   );
 }
