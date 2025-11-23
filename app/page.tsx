@@ -4,6 +4,7 @@ import CoreValues from "./components/CoreValues";
 import WhyChooseBhagwati from "./components/WhyChooseBhagwati";
 import StatsBanner from "./components/StatsBanner";
 import FeaturedProducts from "./components/FeaturedProducts";
+import OurOtherProducts from "./components/OurOtherProducts";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <WhyChooseBhagwati />
       <StatsBanner />
       <FeaturedProducts />
+      <OurOtherProducts />
     </main>
   );
 }

@@ -14,7 +14,7 @@ export default function FeaturedProducts() {
       price: "₹ 1,099",
     },
     {
-      image: "/images/home-page-images/cbff4c565288b07a88ff3975159517c647a3cdf1.jpg",
+      image: "/images/home-page-images/8059147120ebb0247de628972dafb8dd82f9365f (1).png",
       category: "RESTAURANT & BULK USE",
       categoryColor: "bg-orange-100 text-orange-700",
       name: "Bhagwati Khushi Tin 15 L",
