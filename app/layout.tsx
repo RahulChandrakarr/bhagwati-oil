@@ -29,6 +29,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: "Bhagwati Industries",
   description: "Bhagwati Industries - Quality Oil Products",
+  icons: {
+    icon: "/images/home-page-images/our-other-products/fevicon.png",
+  },
 };
 
 export default function RootLayout({
