@@ -34,3 +34,20 @@
 .yellow-theme-bg:hover{
   background-color: #B8941F;
 }
+
+.heading-serif {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .heading-serif {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
