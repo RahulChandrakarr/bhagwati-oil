@@ -1,19 +1,21 @@
+import Image from "next/image";
+
 export default function WhyProcessMatters() {
   const reasons = [
     {
-      icon: "🌿",
+      icon: "/images/smg/symbol/Traditional_Wisdom.png",
       title: "Traditional Wisdom",
       description:
         "We honor time-tested cold-pressing methods passed down through generations, ensuring oils retain their natural nutrients and authentic flavors.",
     },
     {
-      icon: "☠️",
+      icon: "/images/smg/symbol/model_standards.png",
       title: "Modern Standards",
       description:
         "State-of-the-art testing and quality control meet international certifications, guaranteeing safety and purity in every bottle.",
     },
     {
-      icon: "💡",
+      icon: "/images/smg/symbol/uncompromising_quality.png",
       title: "Uncompromising Quality",
       description:
         "From seed selection to final packaging, our rigorous multi-stage process ensures only premium-grade oil reaches your kitchen.",
@@ -39,17 +41,27 @@ export default function WhyProcessMatters() {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow border-b-4 border-gradient-to-r from-[#556B2F] to-[#D4AF37] relative overflow-hidden"
-              style={{
-                borderImage: "linear-gradient(to right, #556B2F, #D4AF37) 1",
-              }}
+              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#556B2F] to-[#D4AF37] flex items-center justify-center text-2xl mb-6">
-                {reason.icon}
+              {/* Gradient bottom border */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#556B2F] via-[#8B9D42] to-[#D4AF37]"></div>
+              
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#556B2F] to-[#D4AF37] flex items-center justify-center mb-6 p-2">
+                <Image
+                  src={reason.icon}
+                  alt={reason.title}
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain brightness-0 invert"
+                />
               </div>
-              <h3 className="text-xl font-serif text-[#5C6B5E] mb-3 font-[family-name:var(--font-poppins)]">
-                {reason.title}
-              </h3>
+              <div className="mb-3">
+                <h3 className="text-xl font-serif text-[#5C6B5E] mb-2 font-[family-name:var(--font-poppins)]">
+                  {reason.title}
+                </h3>
+                {/* Gradient underline */}
+                <div className="w-20 h-0.5 bg-gradient-to-r from-[#556B2F] to-[#D4AF37]"></div>
+              </div>
               <p className="text-[#5C6B5E] leading-relaxed text-sm font-[family-name:var(--font-poppins)]">
                 {reason.description}
               </p>
