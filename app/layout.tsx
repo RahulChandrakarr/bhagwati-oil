@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -19,6 +19,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const playfairDisplay = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+});
+
 export const metadata: Metadata = {
   title: "Bhagwati Industries",
   description: "Bhagwati Industries - Quality Oil Products",
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${playfairDisplay.variable} antialiased max-w-screen`}
       >
         <Navbar />
         {children}
