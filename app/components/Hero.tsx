@@ -11,10 +11,10 @@ export default function Hero() {
         <Image
           src="/images/home-page-images/7892cf9e7319df829ff3a5612226f9e670d3eb4a.png"
           alt="Khushi Gold and Anandam Rice Bran Oil"
-        className="h-screen w-full object-covers"
-        width={1000}
-        height={1000}
+          className="h-screen w-full object-cover object-center md:object-cover"
+          fill
           quality={90}
+          priority
         />
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/60" />
