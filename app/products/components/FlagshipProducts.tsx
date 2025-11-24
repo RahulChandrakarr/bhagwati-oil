@@ -77,8 +77,8 @@ export default function FlagshipProducts() {
           />
         </motion.div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
+        {/* Main Content - Logo and Product Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto mb-12 md:mb-16">
           {/* Left: Logo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -144,7 +144,7 @@ export default function FlagshipProducts() {
             </div>
 
             {/* Perfect For */}
-            <div className="mb-6 md:mb-8">
+            <div>
               <ul className="space-y-3 md:space-y-4">
                 {perfectFor.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -159,43 +159,45 @@ export default function FlagshipProducts() {
                 ))}
               </ul>
             </div>
-
-            {/* Why Switch to Khushi Gold? */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-[#FFF9E6] border border-[#D4AF37]/30 rounded-lg p-6 md:p-8"
-            >
-              <h4 className="text-xl md:text-2xl font-semibold text-[#556B2F] mb-6 text-center">
-                Why Switch to Khushi Gold?
-              </h4>
-              <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto">
-                {whySwitch.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="flex flex-col items-center text-center"
-                  >
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#D4AF37] flex items-center justify-center mb-3 md:mb-4">
-                      <FontAwesomeIcon
-                        icon={item.icon}
-                        className="text-white text-xl md:text-2xl h-8"
-                      />
-                    </div>
-                    <p className="text-sm md:text-base text-gray-700 font-medium">
-                      {item.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
+
+        {/* Why Switch to Khushi Gold? - Full Width Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="bg-[#FFF9E6] border border-[#D4AF37]/30 rounded-lg p-8 md:p-12 lg:p-16">
+            <h4 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#556B2F] mb-8 md:mb-12 text-center">
+              Why Switch to Khushi Gold?
+            </h4>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+              {whySwitch.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#D4AF37] flex items-center justify-center mb-4 md:mb-6">
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      className="text-white text-xl md:text-2xl h-8"
+                    />
+                  </div>
+                  <p className="text-sm md:text-base text-gray-700 font-medium">
+                    {item.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
