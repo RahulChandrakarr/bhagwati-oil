@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="bg-yellow-50 border-b border-yellow-100 z-50">
       <div className="container">
-        <div className="flex items-center justify-between h-16 py-2">
+        <div className="flex items-center justify-between h-16 py-10">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
@@ -32,12 +32,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-25 flex-1 justify-center">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-slate-700 hover:text-slate-900 font-medium text-sm xl:text-base transition-colors"
+                className="text-slate-700 hover:text-slate-900 font-medium text-base xl:text-lg transition-colors"
               >
                 {link.name}
               </Link>

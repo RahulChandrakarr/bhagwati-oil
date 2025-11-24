@@ -12,7 +12,7 @@ export default function ProcessHero() {
 
         {/* Main Heading */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">
-          Our Process
+          Crafting Purity
         </h1>
 
         {/* Description */}

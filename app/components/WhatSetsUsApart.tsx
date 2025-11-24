@@ -7,52 +7,52 @@ export default function WhatSetsUsApart() {
       icon: faLeaf,
       title: "100% Natural Oils",
       description: "Our oils are extracted from the finest natural sources, ensuring purity and authentic taste in every drop.",
-      iconBg: "bg-green-100",
-    },
-    {
-      icon: faDroplet,
-      title: "Cold Pressed Process",
-      description: "Traditional cold-pressed method preserves natural nutrients, vitamins, and the rich flavor of our oils.",
-      iconBg: "bg-green-100",
+      iconBg: "bg-[#d4f4a7]",
     },
     {
       icon: faAward,
       title: "Trusted Since 1985",
       description: "Four decades of excellence and trust, serving families across India with premium quality cooking oils.",
-      iconBg: "bg-green-100",
+      iconBg: "bg-[#d4f4a7]",
+    },
+    {
+      icon: faDroplet,
+      title: "Cold Pressed Process",
+      description: "Traditional cold-pressed method preserves natural nutrients, vitamins, and the rich flavor of our oils.",
+      iconBg: "bg-[#d4f4a7]",
     },
   ];
 
   return (
-    <section className="bg-[#ECFCCB] py-12 md:py-16 lg:py-20">
-      <div className="container">
+    <section className="bg-[#f0f9d0] py-16 md:py-20 lg:py-24">
+      <div className="container px-4 md:px-6 lg:px-8">
         {/* Heading */}
-        <div className="mb-6 md:mb-8">
-          <h2 className="heading-serif text-slate-800 mb-4">
+        <div className="mb-12 md:mb-16">
+          <h2 className="heading-serif text-slate-700 mb-4 text-3xl md:text-4xl lg:text-5xl">
             What Sets Us Apart
           </h2>
-          <p className="text-slate-600 text-center text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-center text-base md:text-lg max-w-3xl mx-auto">
             Committed to delivering excellence through tradition, quality, and natural goodness.
           </p>
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-6 md:p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl shadow-sm p-8 md:p-10 flex flex-col items-center text-center hover:shadow-md transition-all duration-300"
             >
               {/* Icon */}
-              <div className={`${feature.iconBg} w-16 h-16 rounded-full flex items-center justify-center mb-4 md:mb-6`}>
+              <div className={`${feature.iconBg} w-16 h-16 rounded-full flex items-center justify-center mb-6`}>
                 <FontAwesomeIcon
                   icon={feature.icon}
-                  className="text-slate-900 h-8 text-sm"
+                  className="text-slate-700 h-7 w-7"
                 />
               </div>
 
               {/* Title */}
-              <h3 className="text-slate-800 font-bold text-lg md:text-xl mb-3 md:mb-4">
+              <h3 className="text-slate-700 font-semibold text-lg md:text-xl mb-4">
                 {feature.title}
               </h3>
 
@@ -67,5 +67,4 @@ export default function WhatSetsUsApart() {
     </section>
   );
 }
-
 
