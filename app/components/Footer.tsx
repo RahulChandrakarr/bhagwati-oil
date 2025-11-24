@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              Enrich by nature, trusted by families
+              <span className="text-[#D4AF37] font-semibold" style={{ color: '#D4AF37' }}>Enrich by nature, trusted by families</span>
               <br />
               <br />
               100% pure, cold-pressed oils — bringing health and authenticity to
