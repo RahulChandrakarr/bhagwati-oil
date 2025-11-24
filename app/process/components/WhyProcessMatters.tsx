@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function WhyProcessMatters() {
@@ -26,7 +29,13 @@ export default function WhyProcessMatters() {
     <section className="bg-[#F9F9F3] py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C3E2E] mb-4">
             Why Our Process Matters
           </h2>
@@ -34,13 +43,17 @@ export default function WhyProcessMatters() {
             Our commitment to traditional cold-pressing ensures you get the
             healthiest, most flavorful oil possible.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {reasons.map((reason, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
             >
               {/* Gradient bottom border */}
@@ -65,7 +78,7 @@ export default function WhyProcessMatters() {
               <p className="text-[#5C6B5E] leading-relaxed text-sm font-[family-name:var(--font-poppins)]">
                 {reason.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

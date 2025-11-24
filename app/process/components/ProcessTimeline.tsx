@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function ProcessTimeline() {
@@ -62,7 +65,13 @@ export default function ProcessTimeline() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C3E2E] mb-4">
             Our Process
           </h2>
@@ -70,7 +79,7 @@ export default function ProcessTimeline() {
             From farm to table, every step is designed to deliver the purest and
             healthiest oil for your family.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
@@ -80,8 +89,12 @@ export default function ProcessTimeline() {
           {/* Steps */}
           <div className="space-y-12 md:space-y-16">
             {steps.map((step, index) => (
-              <div
+              <motion.div
                 key={step.number}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`relative flex flex-col md:flex-row items-center gap-8 ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
@@ -120,7 +133,13 @@ export default function ProcessTimeline() {
 
                 {/* Center Circle with Icon */}
                 <div className="hidden md:flex w-2/12 justify-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#556B2F] to-[#D4AF37] flex items-center justify-center shadow-lg z-10 p-3">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                    className="w-16 h-16 rounded-full bg-gradient-to-b from-[#556B2F] to-[#D4AF37] flex items-center justify-center shadow-lg z-10 p-3"
+                  >
                     <Image
                       src={step.icon}
                       alt={step.title}
@@ -128,18 +147,24 @@ export default function ProcessTimeline() {
                       height={32}
                       className="w-8 h-8 object-contain brightness-0 invert"
                     />
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Empty Space for alternating layout */}
                 <div className="hidden md:block w-5/12"></div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Bottom Note */}
-        <div className="mt-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 text-center"
+        >
           <div className="inline-block bg-[#F9F9F3] rounded-2xl px-8 py-6 max-w-3xl">
             <p className="text-[#2C3E2E] leading-relaxed">
               <span className="font-semibold">Committed to Excellence:</span> Our
@@ -148,7 +173,7 @@ export default function ProcessTimeline() {
               standards.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
