@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 
@@ -7,7 +10,13 @@ export default function VisionMission() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
           {/* Vision Card */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden relative"
+          >
             {/* Golden-yellow top border */}
             <div className="h-1 bg-[#D4AF37] w-full" />
             
@@ -29,10 +38,16 @@ export default function VisionMission() {
                 To enrich lives with healthy, heart-friendly oils crafted with care and innovation.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Mission Card */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden relative"
+          >
             {/* Olive-green top border */}
             <div className="h-1 bg-[#6B8E23] w-full" />
             
@@ -54,7 +69,7 @@ export default function VisionMission() {
                 To become a trusted household name for premium edible oils, embodying health, quality, and sustainability.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

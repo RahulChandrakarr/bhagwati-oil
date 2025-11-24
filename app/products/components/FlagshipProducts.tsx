@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,7 +53,13 @@ export default function FlagshipProducts() {
     <section className="py-12 md:py-16 lg:py-20 bg-white">
       <div className="container">
         {/* Heading */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#556B2F] mb-4"
             style={{
@@ -59,13 +68,25 @@ export default function FlagshipProducts() {
           >
             Our Flagship Products
           </h2>
-          <div className="w-24 h-1 bg-[#D4AF37] mx-auto" />
-        </div>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "6rem" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-24 h-1 bg-[#D4AF37] mx-auto"
+          />
+        </motion.div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Left: Logo */}
-          <div className="flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center"
+          >
             <div className="w-full max-w-md">
               <Image
                 src="/images/about-us/f22673f81fae0f643877a07c58fbe0c8b464bce0.png"
@@ -75,10 +96,16 @@ export default function FlagshipProducts() {
                 className="object-contain w-full h-auto"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Product Details */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col"
+          >
             {/* Product Title */}
             <div className="mb-4 md:mb-6">
               <h3
@@ -134,14 +161,24 @@ export default function FlagshipProducts() {
             </div>
 
             {/* Why Switch to Khushi Gold? */}
-            <div className="bg-[#FFF9E6] border border-[#D4AF37]/30 rounded-lg p-6 md:p-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-[#FFF9E6] border border-[#D4AF37]/30 rounded-lg p-6 md:p-8"
+            >
               <h4 className="text-xl md:text-2xl font-semibold text-[#556B2F] mb-6 text-center">
                 Why Switch to Khushi Gold?
               </h4>
               <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto">
                 {whySwitch.map((item, index) => (
-                  <div
+                  <motion.div
                     key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     className="flex flex-col items-center text-center"
                   >
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#D4AF37] flex items-center justify-center mb-3 md:mb-4">
@@ -153,11 +190,11 @@ export default function FlagshipProducts() {
                     <p className="text-sm md:text-base text-gray-700 font-medium">
                       {item.label}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

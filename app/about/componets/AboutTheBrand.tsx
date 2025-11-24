@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf, faHeart, faShield } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +29,13 @@ export default function AboutTheBrand() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Left Column: About the Brand */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col"
+          >
             {/* Title with golden line */}
             <div className="mb-6 md:mb-8">
               <div className="w-16 h-1 bg-[#D4AF37] mb-4 md:mb-5" />
@@ -48,7 +57,14 @@ export default function AboutTheBrand() {
             {/* Feature Icons */}
             <div className="grid grid-cols-3 gap-4 md:gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="flex flex-col items-center text-center"
+                >
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#556B2F] flex items-center justify-center mb-3 md:mb-4">
                     <FontAwesomeIcon
                       icon={feature.icon}
@@ -61,15 +77,27 @@ export default function AboutTheBrand() {
                   <p className="text-xs md:text-sm text-gray-600">
                     {feature.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Product Logos */}
-          <div className="flex flex-col gap-6 md:gap-8 lg:gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col gap-6 md:gap-8 lg:gap-10"
+          >
             {/* First Row: Khushi GOLD Logo - Full Width */}
-            <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center"
+            >
               <Image
                 src="/images/about-us/bfb378934ebd7dee98e8e5cc11312636fda7bdd1 (1).png"
                 alt="Khushi GOLD Logo"
@@ -77,12 +105,18 @@ export default function AboutTheBrand() {
                 height={150}
                 className="object-contain max-w-full h-auto"
               />
-            </div>
+            </motion.div>
 
             {/* Second Row: Two Logos Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Bhagwati Industries Logo */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center"
+              >
                 <Image
                   src="/images/about-us/80d2283b774dda134f89b35be2f0712c0e810c8a.png"
                   alt="Bhagwati Industries Logo"
@@ -90,10 +124,16 @@ export default function AboutTheBrand() {
                   height={150}
                   className="object-contain max-w-full h-auto"
                 />
-              </div>
+              </motion.div>
 
               {/* Amrit Anandam Logo */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white rounded-lg border border-gray-200 p-6 md:p-8 flex items-center justify-center"
+              >
                 <Image
                   src="/images/about-us/f22673f81fae0f643877a07c58fbe0c8b464bce0.png"
                   alt="Amrit Anandam Logo"
@@ -101,9 +141,9 @@ export default function AboutTheBrand() {
                   height={150}
                   className="object-contain max-w-full h-auto"
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

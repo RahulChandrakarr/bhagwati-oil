@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface TimelineEvent {
   year: string;
   title: string;
@@ -49,7 +53,13 @@ export default function OurLegacyTimeline() {
     <section className="py-12 md:py-16 lg:py-20 bg-[#FDFDF7]">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16 lg:mb-20"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl text-[#36454F] mb-3 md:mb-4"
             style={{
@@ -61,7 +71,7 @@ export default function OurLegacyTimeline() {
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             A heritage of excellence spanning over four decades
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
@@ -77,8 +87,12 @@ export default function OurLegacyTimeline() {
               const isLast = index === timelineEvents.length - 1;
 
               return (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`relative flex items-center ${
                     isCenter
                       ? "justify-center"
@@ -144,7 +158,7 @@ export default function OurLegacyTimeline() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -40,19 +43,31 @@ export default function AvailableAcrossIndia() {
     <section className="py-12 md:py-16 lg:py-20 bg-[#FDFDF7]">
       <div className="container">
         {/* Top Section: Heading and Description */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16 lg:mb-20"
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#556B2F] mb-4 md:mb-6">
             Available Across India
           </h2>
           <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Our premium edible oils are trusted by homes across Chhattisgarh, Odisha, Maharashtra, and Madhya Pradesh – and now available on leading e-commerce platforms.
           </p>
-        </div>
+        </motion.div>
 
         {/* Middle Section: Map and State Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16 lg:mb-20">
           {/* Left: Map of India */}
-          <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-lg shadow-sm p-6 md:p-8 flex items-center justify-center"
+          >
             <Image
               src="/images/about-us/india-ma.png"
               alt="Map of India showing coverage areas"
@@ -60,13 +75,17 @@ export default function AvailableAcrossIndia() {
               height={600}
               className="object-contain max-w-full h-auto"
             />
-          </div>
+          </motion.div>
 
           {/* Right: State Cards */}
           <div className="flex flex-col gap-4 md:gap-6">
             {states.map((state, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-lg shadow-sm p-4 md:p-6 flex items-center gap-4 md:gap-6"
               >
                 <div className="flex-shrink-0">
@@ -80,7 +99,7 @@ export default function AvailableAcrossIndia() {
                 <h3 className="text-lg md:text-xl font-semibold text-[#556B2F]">
                   {state}
                 </h3>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -92,8 +111,12 @@ export default function AvailableAcrossIndia() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
             {statistics.map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white text-center relative z-10"
               >
                 {/* Icon with solid olive-green circle */}
@@ -117,7 +140,7 @@ export default function AvailableAcrossIndia() {
                 <p className="text-sm  text-black">
                   {stat.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

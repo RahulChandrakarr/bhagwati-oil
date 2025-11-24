@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faDiamond } from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +36,13 @@ export default function OtherProducts() {
         <div className="mb-16 md:mb-20 lg:mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left: Content */}
-            <div className="order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
               {/* Product Title */}
               <div className="mb-4 md:mb-6">
                 <h3
@@ -98,10 +107,16 @@ export default function OtherProducts() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Image */}
-            <div className="order-1 lg:order-2 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="order-1 lg:order-2 flex items-center justify-center"
+            >
               <div className="w-full max-w-md">
                 <Image
                   src="/images/home-page-images/our-other-products/dubble-bottle.jpg"
@@ -111,7 +126,7 @@ export default function OtherProducts() {
                   className="object-contain w-full h-auto"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -119,7 +134,13 @@ export default function OtherProducts() {
         <div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left: Image */}
-            <div className="flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center justify-center"
+            >
               <div className="w-full max-w-md">
                 <Image
                   src="/images/home-page-images/1a5eb5f6842d265a37c7b76528d331d427b540cc.png"
@@ -129,10 +150,15 @@ export default function OtherProducts() {
                   className="object-contain w-full h-auto"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Content */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {/* Product Title */}
               <div className="mb-4 md:mb-6">
                 <h3
@@ -197,7 +223,7 @@ export default function OtherProducts() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
