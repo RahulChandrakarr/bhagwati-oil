@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Brand Section */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block cursor-pointer">
               <Image
                 src="/images/home-page-images/bfb378934ebd7dee98e8e5cc11312636fda7bdd1.png"
                 alt="Bhagwati Industries"
@@ -40,19 +40,19 @@ export default function Footer() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFacebookF} className="w-3 h-3" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors cursor-pointer"
               >
                 <FontAwesomeIcon icon={faInstagram} className="w-3 h-3" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full border border-[#B8C5B6] flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-white transition-colors cursor-pointer"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} className="w-3 h-3" />
               </a>
@@ -66,22 +66,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-white transition-colors cursor-pointer">
                   Bhagwati Khushi Tin
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-white transition-colors cursor-pointer">
                   Anandam Tin
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-white transition-colors cursor-pointer">
                   Refined Oil Pouch
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-white transition-colors cursor-pointer">
                   Refined Oil Bottle
                 </Link>
               </li>
@@ -96,17 +96,17 @@ export default function Footer() {
               </h3>
               <ul className="space-y-4 text-sm">
                 <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
+                  <Link href="/about" className="hover:text-white transition-colors cursor-pointer">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" className="hover:text-white transition-colors">
+                  <Link href="/products" className="hover:text-white transition-colors cursor-pointer">
                     Our Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/process" className="hover:text-white transition-colors">
+                  <Link href="/process" className="hover:text-white transition-colors cursor-pointer">
                     Our Process
                   </Link>
                 </li>
@@ -118,17 +118,17 @@ export default function Footer() {
               </h3>
               <ul className="space-y-4 text-sm">
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
+                  <Link href="/contact" className="hover:text-white transition-colors cursor-pointer">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="hover:text-white transition-colors">
+                  <Link href="/faq" className="hover:text-white transition-colors cursor-pointer">
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="hover:text-white transition-colors">
+                  <Link href="/terms" className="hover:text-white transition-colors cursor-pointer">
                     Terms
                   </Link>
                 </li>

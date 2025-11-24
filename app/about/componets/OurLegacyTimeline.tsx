@@ -104,7 +104,7 @@ export default function OurLegacyTimeline() {
                   {/* Timeline Dot */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#D4AF37] z-10 hidden md:block ${
-                      isLast ? "md:block" : ""
+                      isLast ? "md:hidden" : ""
                     }`}
                   />
 
