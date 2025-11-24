@@ -6,13 +6,14 @@ import Image from "next/image";
 export default function Testimonials() {
   const testimonials = [
     {
-      image: "/images/home-page-images/reviews/2e420f89204ac35d728c1828ef513c634e032f14.png",
+      image: "/images/home-page-images/reviews/7ceed0acfdb9d363d2abcd51ed091cc8a6f85d73.jpg",
+      
       name: "Priya Sharma",
       location: "Bilaspur",
       quote: "Bhagwati oils have been a staple in our kitchen for over 10 years. The authentic taste and purity is unmatched.",
     },
     {
-      image: "/images/home-page-images/reviews/7ceed0acfdb9d363d2abcd51ed091cc8a6f85d73.jpg",
+      image: "/images/home-page-images/reviews/2e420f89204ac35d728c1828ef513c634e032f14.png",
       name: "Rajesh Sharma",
       location: "Mumbai",
       quote: "The quality speaks for itself. My family trusts Bhagwati for all our cooking needs. Highly recommended!",
