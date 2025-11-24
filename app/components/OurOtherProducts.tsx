@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -40,20 +43,30 @@ export default function OurOtherProducts() {
     <section className="bg-white py-12 md:py-16 lg:py-20">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4" style={{ color: "#556b2f" }}>
             Our Other Products
           </h2>
           <p className="text-slate-600 text-sm md:text-base lg:text-lg max-w-3xl mx-auto">
             Explore our complete range of quality products
           </p>
-        </div>
+        </motion.div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
           {products.map((product, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               {/* Product Image */}
@@ -78,24 +91,36 @@ export default function OurOtherProducts() {
                   {product.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Our Purity Process Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Side - Image */}
-          <div className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-md">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-md"
+          >
             <Image
               src="/images/home-page-images/our-other-products/e6e84bb438711b208d0ee0c2184b60a725a3787d.png"
               alt="Our Purity Process - State-of-the-art food oil processing facility"
               fill
               className="object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col"
+          >
             {/* Title */}
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8" style={{ color: "#556b2f" }}>
               Our Purity Process
@@ -112,21 +137,45 @@ export default function OurOtherProducts() {
             </div>
 
             {/* Certifications */}
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 md:gap-6"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}
+              >
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">FSSAI Certified</span>
-              </div>
-              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+                className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}
+              >
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">ISO Compliant</span>
-              </div>
-              <div className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.7 }}
+                className="text-white rounded-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center gap-3 shadow-md" style={{ backgroundColor: "#556b2f" }}
+              >
                 <FontAwesomeIcon icon={faCheck} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold">Lab Tested</span>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

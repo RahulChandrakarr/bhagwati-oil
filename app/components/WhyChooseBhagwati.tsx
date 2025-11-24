@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShield,
@@ -71,20 +74,30 @@ export default function WhyChooseBhagwati() {
     <section className="py-12 md:py-16 lg:py-20" style={{ backgroundColor: "#FFF2CE" }}>
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2 className="heading-serif mb-4" style={{ color: "#556B2F" }}>
             Why Choose Bhagwati?
           </h2>
           <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto">
             Discover the difference that four decades of expertise, unwavering quality standards, and dedication to purity make in every bottle.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="rounded-lg shadow-md p-6 md:p-8"
               style={{ backgroundColor: "#F5F5F5" }}
             >
@@ -142,7 +155,7 @@ export default function WhyChooseBhagwati() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

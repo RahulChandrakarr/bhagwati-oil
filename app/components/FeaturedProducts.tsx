@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -51,20 +54,30 @@ export default function FeaturedProducts() {
     <section className="py-12 md:py-16 lg:py-20" style={{ backgroundColor: "#FFF2CE" }}>
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2 className="heading-serif text-slate-800 mb-4">
             Featured Products
           </h2>
           <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto">
             From households to industries — Bhagwati delivers purity in every drop.
           </p>
-        </div>
+        </motion.div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               {/* Product Image */}
@@ -104,13 +117,13 @@ export default function FeaturedProducts() {
                 {/* Buy Now Button */}
                 <Link
                   href="/buy"
-                  className="yellow-theme-bg text-white font-semibold rounded-lg px-6 py-3 flex items-center justify-center gap-2 hover:shadow-md transition-all w-full"
+                  className="yellow-theme-bg text-white font-semibold rounded-lg px-6 py-3 flex items-center justify-center gap-2 hover:shadow-md transition-all w-full cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faShoppingCart} className="h-4 w-4" />
                   <span>Buy Now</span>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

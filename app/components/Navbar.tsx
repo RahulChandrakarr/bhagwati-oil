@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between h-16 py-10">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center flex-shrink-0 cursor-pointer">
             <Image
               src="/images/home-page-images/bfb378934ebd7dee98e8e5cc11312636fda7bdd1.png"
               alt="Bhagwati Industries Logo"
@@ -48,7 +48,7 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <Link
               href="/buy"
-              className="px-4 xl:px-6 py-2 xl:py-2.5 yellow-theme-bg text-white font-semibold rounded-full text-sm xl:text-base transition-all shadow-sm hover:shadow-md"
+              className="px-4 xl:px-6 py-2 xl:py-2.5 yellow-theme-bg text-white font-semibold rounded-full text-sm xl:text-base transition-all shadow-sm hover:shadow-md cursor-pointer"
             >
               Buy Now
             </Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-slate-700 hover:text-slate-900"
+            className="lg:hidden p-2 text-slate-700 hover:text-slate-900 cursor-pointer"
             aria-label="Toggle menu"
           >
             <svg
@@ -87,7 +87,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-slate-700 hover:text-slate-900 font-medium text-base py-2 transition-colors"
+                  className="text-slate-700 hover:text-slate-900 font-medium text-base py-2 transition-colors cursor-pointer"
                 >
                   {link.name}
                 </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
               <Link
                 href="/buy"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-2 px-6 py-3 yellow-theme-bg text-white font-semibold rounded-full text-base text-center transition-all shadow-sm"
+                className="mt-2 px-6 py-3 yellow-theme-bg text-white font-semibold rounded-full text-base text-center transition-all shadow-sm cursor-pointer"
               >
                 Buy Now
               </Link>

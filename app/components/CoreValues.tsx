@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf, faCheck } from "@fortawesome/free-solid-svg-icons";
 
@@ -40,7 +43,13 @@ export default function CoreValues() {
     <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           {/* Leaf Icon */}
           <div className="flex justify-center mb-3">
             <FontAwesomeIcon
@@ -63,13 +72,17 @@ export default function CoreValues() {
           <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
             Three pillars that define everything we do — from farm to your family's table.
           </p>
-        </div>
+        </motion.div>
 
         {/* Core Values Sections */}
         <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
           {values.map((value, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`flex flex-col ${
                 value.imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"
               } items-start gap-4 sm:gap-6 md:gap-8 lg:gap-12`}
@@ -126,7 +139,7 @@ export default function CoreValues() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

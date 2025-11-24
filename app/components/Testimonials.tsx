@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Testimonials() {
@@ -26,20 +29,30 @@ export default function Testimonials() {
     <section className="bg-white py-12 md:py-16 lg:py-20">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4" style={{ color: "#556b2f" }}>
             Loved by Families Across India
           </h2>
           <p className="text-slate-600 text-sm md:text-base lg:text-lg max-w-3xl mx-auto">
             Explore our complete range of quality products
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-stone-50 rounded-lg shadow-md p-6 md:p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow"
             >
               {/* Profile Picture */}
@@ -66,7 +79,7 @@ export default function Testimonials() {
               <p className="text-slate-700 text-sm md:text-base leading-relaxed italic">
                 &quot;{testimonial.quote}&quot;
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
