@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -15,10 +16,20 @@ export default function ContactUs() {
     <section className="bg-[#F9F9F3] py-16 md:py-24 font-sans">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#8B9D42] text-white mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#8B9D42] text-white mb-6"
+          >
              <FontAwesomeIcon icon={faCommentDots} className="w-6 h-6" />
-          </div>
+          </motion.div>
           <h1 className="text-4xl md:text-5xl font-serif text-[#2C3E2E] mb-4">
             Let&apos;s Connect
           </h1>
@@ -31,12 +42,18 @@ export default function ContactUs() {
             We&apos;re here to answer your questions and discuss how we can serve
             you better.
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24 max-w-6xl mx-auto">
           {/* Info Card - Left Column */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#556B2F] via-[#6B8E3D] to-[#556B2F] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 bg-gradient-to-b from-[#556B2F] via-[#6B8E3D] to-[#556B2F] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl"
+          >
             {/* Decorative Circle */}
             <div className="absolute bottom-12 right-12 w-24 h-24 rounded-full border-2 border-white/20"></div>
             <div className="absolute bottom-8 right-8 w-32 h-32 rounded-full border-2 border-white/10"></div>
@@ -44,7 +61,13 @@ export default function ContactUs() {
             <h2 className="text-2xl font-serif mb-8">Get in Touch</h2>
 
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex items-start gap-4"
+              >
                 <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
                   <FontAwesomeIcon icon={faPhone} className="w-4 h-4" />
                 </div>
@@ -54,9 +77,15 @@ export default function ContactUs() {
                   </p>
                   <p className="font-medium">+91 9826161357</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex items-start gap-4"
+              >
                 <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
                   <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
                 </div>
@@ -66,9 +95,15 @@ export default function ContactUs() {
                   </p>
                   <p className="font-medium">bhagwati.solvents@gmail.com</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="flex items-start gap-4"
+              >
                 <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="w-4 h-4" />
                 </div>
@@ -82,9 +117,15 @@ export default function ContactUs() {
                     Mahasamund (C.G.) - 493445
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                className="flex items-start gap-4"
+              >
                 <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
                   <FontAwesomeIcon icon={faClock} className="w-4 h-4" />
                 </div>
@@ -95,12 +136,18 @@ export default function ContactUs() {
                   <p className="font-medium">Mon - Sat: 9:00 AM - 6:00 PM</p>
                   <p className="text-sm opacity-80">Sunday: Closed</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form - Right Column */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100"
+          >
             <form className="space-y-6">
               <div>
                 <label
@@ -171,21 +218,33 @@ export default function ContactUs() {
                 <FontAwesomeIcon icon={faPaperPlane} className="w-4 h-4" />
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
 
         {/* Visit Us Section */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-4xl md:text-5xl font-serif text-[#2C3E2E] mb-4">
             Visit Us
           </h2>
           <p className="text-[#5C6B5E]">
             Find us in the heart of Raipur, Chhattisgarh
           </p>
-        </div>
+        </motion.div>
 
         {/* Map */}
-        <div className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl relative bg-gray-200">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl relative bg-gray-200"
+        >
              <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d82.097!3d21.107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA2JzI1LjIiTiA4MsKwMDUnNDkuMiJF!5e0!3m2!1sen!2sin!4v1630000000000!5m2!1sen!2sin"
                 width="100%"
@@ -198,7 +257,7 @@ export default function ContactUs() {
              ></iframe>
              {/* Overlay for custom pin look if needed, but iframe is better */}
              <div className="absolute inset-0 pointer-events-none border-4 border-white/50 rounded-3xl"></div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
