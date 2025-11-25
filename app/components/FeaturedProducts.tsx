@@ -116,7 +116,7 @@ export default function FeaturedProducts() {
 
                 {/* Buy Now Button */}
                 <Link
-                  href="/buy"
+                  href="/contact"
                   className="yellow-theme-bg text-white font-semibold rounded-lg px-6 py-3 flex items-center justify-center gap-2 hover:shadow-md transition-all w-full cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faShoppingCart} className="h-4 w-4" />

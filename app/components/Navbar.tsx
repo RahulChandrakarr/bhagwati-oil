@@ -47,7 +47,7 @@ export default function Navbar() {
           {/* Buy Now Button - Desktop */}
           <div className="hidden lg:block flex-shrink-0">
             <Link
-              href="/buy"
+              href="/contact"
               className="px-4 xl:px-6 py-2 xl:py-2.5 yellow-theme-bg text-white font-semibold rounded-full text-sm xl:text-base transition-all shadow-sm hover:shadow-md cursor-pointer"
             >
               Buy Now
@@ -93,7 +93,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/buy"
+                href="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="mt-2 px-6 py-3 yellow-theme-bg text-white font-semibold rounded-full text-base text-center transition-all shadow-sm cursor-pointer"
               >
