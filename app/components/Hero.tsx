@@ -2,25 +2,62 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
+const heroImages = [
+  {
+    src: "/images/home-page-images/7892cf9e7319df829ff3a5612226f9e670d3eb4a.png",
+    alt: "Khushi Gold and Anandam Rice Bran Oil display",
+  },
+  {
+    src: "/images/home-page-images/Untitled design (1).jpg",
+    alt: "Bhagwati Oil manufacturing facility aerial view",
+  },
+  {
+    src: "/images/home-page-images/Untitled design (2).jpg",
+    alt: "Khushi Gold product assortment close-up",
+  },
+];
+
 export default function Hero() {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative  h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/home-page-images/7892cf9e7319df829ff3a5612226f9e670d3eb4a.png"
-          alt="Khushi Gold and Anandam Rice Bran Oil"
-          className="h-screen w-full object-cover object-center md:object-cover"
-          fill
-          quality={90}
-          priority
-        />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/60" />
+        {heroImages.map((image, index) => (
+          <motion.div
+            key={image.src}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === activeImage ? 1 : 0 }}
+            transition={{ duration: 1.25, ease: "easeInOut" }}
+            aria-hidden={index !== activeImage}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              className="h-screen w-full object-cover object-center md:object-cover"
+              fill
+              quality={90}
+              priority={index === 0}
+            />
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/60" />
+          </motion.div>
+        ))}
       </div>
 
       {/* Content */}
