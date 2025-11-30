@@ -10,7 +10,7 @@ import CTA from "./components/CTA";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-screen overflow-x-hidden">
       <Hero />
       <WhatSetsUsApart />
       <CoreValues />

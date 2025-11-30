@@ -84,12 +84,12 @@ export default function CoreValues() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`flex flex-col ${
-                value.imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"
+                value.imagePosition === "left" ? "md:flex-row-reverse" : "md:flex-row"
               } items-start gap-4 sm:gap-6 md:gap-8 lg:gap-12`}
             >
               {/* Image */}
               <div className="w-full md:w-1/2 flex-shrink-0">
-                <div className="relative h-64 sm:h-80 md:h-96 lg:h-[800px] rounded-xl overflow-hidden">
+                <div className="relative h-64 sm:h-80 lg:h-[400px] rounded-xl overflow-hidden">
                   <Image
                     src={value.image}
                     alt={value.title}
@@ -109,17 +109,17 @@ export default function CoreValues() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-green-600 font-bold text-2xl sm:text-3xl md:text-4xl mb-2">
+                <h3 className="text-green-600 font-bold text-2xl sm:text-3xl  mb-2">
                   {value.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="yellow-theme-color font-semibold text-base sm:text-lg md:text-xl mb-4">
+                <p className="yellow-theme-color font-semibold text-base sm:text-lg  mb-4">
                   {value.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-600 text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base  mb-6 leading-relaxed">
                   {value.description}
                 </p>
 
